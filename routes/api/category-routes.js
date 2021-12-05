@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     });
 
     if (!catData) {
-      res.status(404).json({ message: 'No categories found with this id!'});
+      res.status(404).json({ message: 'No categories found with this id!' });
       return;
     }
     
@@ -33,7 +33,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!singleCatData) {
-      res.status(404).json({ message: 'No category found with this id!'});
+      res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
     
@@ -47,8 +47,8 @@ router.post('/', async (req, res) => {
   // create a new category
   // category. CREATE
   try {
-    const newCat = await Category.create(req.body);
-    res.status(200).json(newCat);
+    const newCatData = await Category.create(req.body);
+    res.status(200).json(newCatData);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -60,9 +60,25 @@ router.put('/:id', (req, res) => {
   // category. UPDATE
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
   // category. DESTROY
+  try {
+    const delCatData = await Location.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!delCatData) {
+      res.status(404).json({ message: 'No category with this id!' });
+      return;
+    }
+
+    res.status(200).json(delCatData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
