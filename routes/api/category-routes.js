@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
       res.status(404).json({ message: 'No categories found with this id!' });
       return;
     }
-    
+
     res.status(200).json(catData);
   } catch (err) {
     res.status(500).json(err);
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
- // find one category by its `id` value
+  // find one category by its `id` value
   // category FIND ONE
   // be sure to include its associated Products
   try {
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
       res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
-    
+
     res.status(200).json(singleCatData);
   } catch (err) {
     res.status(500).json(err);
