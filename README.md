@@ -12,7 +12,7 @@
 - [License](#License)
     
 ## Description
-This application is a back end for an e-commerce site. By modifying starter code and using express and sequelize to interact with the MYSQL database. The primary goal for this application was to get familiar with using sequelize and object relational mapping. To view a full demonstration of this application please click the following link:
+This application is a back end for an e-commerce site. By modifying starter code and using express and sequelize to interact with the MYSQL database. The primary goal for this application was to get familiar with using sequelize and object relational mapping. To view a full demonstration of this application please click the following link: https://watch.screencastify.com/v/1GcZwf9xRPr7If7IdzO9
     
 ## Installation
 Clone this repository to your local machine, open an integrated terminal and run NPM i to install all related dependencies.
